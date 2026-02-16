@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VINYL OS // Node 01</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --system-black: #000000;
+        --system-gray: #111111;
+        --system-border: #222222;
+        --system-orange: #FF4D00;
+        --system-text: #Eaeaea;
+        --system-muted: #666666;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--system-black);
+        color: var(--system-text);
+        overflow: hidden;
+      }
+
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      
+      /* Scrollbar - Industrial Style */
+      ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--system-gray);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--system-border);
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--system-orange);
+      }
+      
+      /* High-Fidelity Vinyl Grooves */
+      .vinyl-groove {
+        background: repeating-radial-gradient(
+          #0a0a0a 0, 
+          #0a0a0a 2px, 
+          #161616 3px, 
+          #161616 4px
+        );
+      }
+      
+      /* Subtle Matte Texture */
+      .bg-noise {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+      }
+
+      /* High-Fidelity Shadows (OCD Fix) */
+      .shadow-smooth {
+        box-shadow: 
+          0 0 0 1px rgba(255,255,255,0.03) inset,
+          0 20px 40px -10px rgba(0,0,0,0.9);
+      }
+
+      /* Custom Range Inputs (Interaction Fix) */
+      input[type=range] {
+        -webkit-appearance: none;
+        background: transparent;
+      }
+      input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background: white;
+        cursor: pointer;
+        margin-top: -5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        opacity: 0;
+        transition: opacity 0.2s, transform 0.2s;
+      }
+      .group:hover input[type=range]::-webkit-slider-thumb {
+        opacity: 1;
+      }
+      input[type=range]:active::-webkit-slider-thumb {
+        transform: scale(1.2);
+        background: var(--system-orange);
+      }
+
+      /* Utilities */
+      .border-system {
+        border-color: var(--system-border);
+      }
+      .bg-system {
+        background-color: var(--system-gray);
+      }
+      .text-orange {
+        color: var(--system-orange);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.564.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
